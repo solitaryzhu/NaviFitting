@@ -2,7 +2,7 @@
 #define __SRC_GAUSS_PROJECTOR_H__
 
 
-namespace navi
+namespace fitting
 {
 
 class GaussProjector

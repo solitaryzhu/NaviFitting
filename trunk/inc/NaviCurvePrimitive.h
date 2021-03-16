@@ -4,7 +4,7 @@
 #include "defs.h"
 #include "Eigen/Core"
 
-namespace navi
+namespace fitting
 {
 
 class NaviCurvePrimitive

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace navi
+namespace fitting
 {
 
 NaviArc::NaviArc(const Eigen::Vector2d &startPos, double startAngle, double length, double curvature)
@@ -42,8 +42,8 @@ bool NaviArc::derivate(ParamDer &der, double s)
     if (s < 0 || s > _length)
         return false;
 
-    /* X(s) = x0 + sin(b * s + c) / b ¨C sin(c) / b;
-       Y(s) = y0 ¨C cos(b * s + c) / b + cos(c) / b;
+    /* X(s) = x0 + sin(b * s + c) / b Â¨C sin(c) / b;
+       Y(s) = y0 Â¨C cos(b * s + c) / b + cos(c) / b;
      **/
     der = ParamDer::Zero(2, 6);
     double theta = _b * s + _c;

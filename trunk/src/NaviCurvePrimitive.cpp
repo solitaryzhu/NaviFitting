@@ -1,6 +1,6 @@
 #include "NaviCurvePrimitive.h"
 
-namespace navi
+namespace fitting
 {
 
 NaviCurvePrimitive::NaviCurvePrimitive()

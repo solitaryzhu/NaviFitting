@@ -2,7 +2,7 @@
 #include "proj4/include/proj_api.h"
 #include <stdio.h>
 
-namespace navi
+namespace fitting
 {
 
 GaussProjector::GaussProjector()

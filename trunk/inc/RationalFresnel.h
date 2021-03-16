@@ -5,7 +5,7 @@
 
 using namespace Eigen;
 
-namespace navi
+namespace fitting
 {
 
 class RationalFresnel

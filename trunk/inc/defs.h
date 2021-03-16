@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace navi
+namespace fitting
 {
 
 enum CURVE_TYPE

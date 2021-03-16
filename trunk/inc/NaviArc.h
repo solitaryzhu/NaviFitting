@@ -4,7 +4,7 @@
 #include "NaviCurvePrimitive.h"
 #include "Eigen/Core"
 
-namespace navi
+namespace fitting
 {
 
 class NaviArc : public NaviCurvePrimitive

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace navi
+namespace fitting
 {
 
 CenterofMassCalculator::CenterofMassCalculator()

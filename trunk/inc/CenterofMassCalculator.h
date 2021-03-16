@@ -5,7 +5,7 @@
 #include "Eigen/Core"
 #include "Eigen/StdVector"
 
-namespace navi
+namespace fitting
 {
 
 class CenterofMassCalculator

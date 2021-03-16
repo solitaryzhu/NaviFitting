@@ -1,6 +1,6 @@
 #include "NaviLine.h"
 
-namespace navi
+namespace fitting
 {
 
 NaviLine::NaviLine(const Eigen::Vector2d &startPos, double angle, double length)
