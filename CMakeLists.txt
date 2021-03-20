@@ -9,10 +9,9 @@ include_directories("${CMAKE_SOURCE_DIR}/trunk/inc/")
 file(GLOB_RECURSE INCS "${CMAKE_CURRENT_SOURCE_DIR}/trunk/inc/*.h")
 file(GLOB_RECURSE SRCS "${CMAKE_CURRENT_SOURCE_DIR}/trunk/src/*.cpp")
 
-find_package(Boost 1.59 REQUIRED)
-
 add_executable("${PROJECT_NAME}" "${SRCS}" "${INCS}")
 
+find_package(Boost 1.59 REQUIRED)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
     target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
