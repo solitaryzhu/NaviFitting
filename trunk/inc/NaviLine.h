@@ -14,7 +14,6 @@ public:
     virtual ~NaviLine();
 
     bool pos(Eigen::Vector2d &pos, double s);
-
     bool derivate(ParamDer &der, double s);
 
 private:

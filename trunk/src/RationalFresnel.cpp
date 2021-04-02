@@ -1,4 +1,4 @@
-#include "RationalFresnel.h"
+﻿#include "RationalFresnel.h"
 #include <cmath>
 
 using namespace std;
@@ -7,16 +7,13 @@ namespace fitting
 {
 
 RationalFresnel::RationalFresnel()
-    : PI(3.14159265359)
-{
+    : PI(3.14159265359) {
 }
 
-RationalFresnel::~RationalFresnel()
-{
+RationalFresnel::~RationalFresnel() {
 }
 
-Eigen::Vector2d RationalFresnel::operator()(double a, double b, double s)
-{
+Eigen::Vector2d RationalFresnel::operator()(double a, double b, double s) {
     Vector2d ret;
 
     double factor = pow(2*abs(a)*PI, 0.5);
@@ -32,8 +29,7 @@ Eigen::Vector2d RationalFresnel::operator()(double a, double b, double s)
     double ct = 0.5 - rt*sin(0.5*PI*(at - pow(t, 2)));
     double st = 0.5 - rt*cos(0.5*PI*(at - pow(t, 2)));
 
-    if (ot < 0)
-    {
+    if (ot < 0) {
         ct = -ct;
         st = -st;
     }

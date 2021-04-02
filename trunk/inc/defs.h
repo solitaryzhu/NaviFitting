@@ -6,18 +6,15 @@
 
 using namespace std;
 
-namespace fitting
-{
+namespace fitting {
 
-enum CURVE_TYPE
-{
+enum CURVE_TYPE {
     LINE = 0,
     ARC,
     CLOTHOID
 };
 
-enum PARAMETER_TYPE
-{
+enum PARAMETER_TYPE {
     X = 0,
     Y,
     ANGLE,
@@ -28,17 +25,12 @@ enum PARAMETER_TYPE
 
 typedef Eigen::Matrix<double, Eigen::Dynamic, Eigen::AutoAlign, 2, 6> ParamDer;
 
-template <typename T> class Point2D
-{
+template <typename T> class Point2D {
 public:
-    Point2D(T x, T y):_x(x), _y(y)
-    {
-
+    Point2D(T x, T y):_x(x), _y(y) {
     }
 
-    virtual ~Point2D()
-    {
-
+    virtual ~Point2D() {
     }
 
     T getX() const { return _x; }

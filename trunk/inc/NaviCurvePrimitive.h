@@ -7,21 +7,14 @@
 namespace fitting
 {
 
-class NaviCurvePrimitive
-{
+class NaviCurvePrimitive{
 public:
     NaviCurvePrimitive();
     virtual ~NaviCurvePrimitive();
 
     virtual bool pos(Eigen::Vector2d &pos, double s) = 0;
-
     virtual bool derivate(ParamDer &der, double s) = 0;
 };
 
-
-
 }
-
-
-
 #endif

@@ -1,4 +1,4 @@
-#include "NaviClothoid.h"
+﻿#include "NaviClothoid.h"
 #include <cmath>
 #include "RationalFresnel.h"
 
@@ -12,8 +12,7 @@ NaviClothoid::NaviClothoid(
     double startCurve, 
     double endCurve, 
     double startAngle, 
-    double length) : PI(3.14159265359)
-{
+    double length) : PI(3.14159265359) {
     _startPos = startPos;
     _a        = (endCurve - startCurve) / (2*length);
     _b        = startCurve;
@@ -21,14 +20,11 @@ NaviClothoid::NaviClothoid(
     _length   = length;
 
     _scale = pow(abs(PI/(2*_a)), 0.5);
-    if (_a > 0)
-    {
+    if (_a > 0) {
         double theta = _c - pow(_b, 2) / (4*abs(_a));
         _mat << cos(theta), -sin(theta),
                 sin(theta),  cos(theta);
-    }
-    else
-    {
+    } else {
         double theta = _c + pow(_b, 2) / (4*abs(_a));
         _mat << -cos(theta), -sin(theta),
                 -sin(theta),  cos(theta);
@@ -40,15 +36,13 @@ NaviClothoid::NaviClothoid(
     _shift =  _startPos - begPos;
 }
 
-NaviClothoid::~NaviClothoid()
-{
-
+NaviClothoid::~NaviClothoid() {
 }
 
-bool NaviClothoid::pos(Eigen::Vector2d &pos, double s)
-{
-    if (s < 0 || s > _length)
+bool NaviClothoid::pos(Eigen::Vector2d &pos, double s) {
+    if (s < 0 || s > _length) {
         return false;
+    }
 
     RationalFresnel rationalFresnel;
     pos = rationalFresnel(_a, _b, s);
@@ -58,20 +52,21 @@ bool NaviClothoid::pos(Eigen::Vector2d &pos, double s)
     return true;
 }
 
-bool NaviClothoid::derivate(ParamDer &der, double s)
-{
-    if (s < 0 || s > _length)
+bool NaviClothoid::derivate(ParamDer &der, double s) {
+    if (s < 0 || s > _length) {
         return false;
+    }
 
     Eigen::Vector2d position;
     pos(position, s);
     Eigen::Vector2d diff = position - _startPos;
 
     double theta(.0);
-    if (_a > 0)
+    if (_a > 0) {
         theta = _c - pow(_b, 2) / (4*abs(_a));
-    else
+    } else {
         theta = _c + pow(_b, 2) / (4*abs(_a));
+    }
 
     der = ParamDer::Zero(2, 6);
     der(0, X) = 1;

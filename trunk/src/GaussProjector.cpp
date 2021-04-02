@@ -1,5 +1,5 @@
 #include "GaussProjector.h"
-#include "proj4/include/proj_api.h"
+#include "proj_api.h"
 #include <stdio.h>
 
 namespace fitting

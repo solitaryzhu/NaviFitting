@@ -1,4 +1,4 @@
-#include "NaviArc.h"
+﻿#include "NaviArc.h"
 #include <cmath>
 
 using namespace std;
@@ -6,23 +6,20 @@ using namespace std;
 namespace fitting
 {
 
-NaviArc::NaviArc(const Eigen::Vector2d &startPos, double startAngle, double length, double curvature)
-{
+NaviArc::NaviArc(const Eigen::Vector2d &startPos, double startAngle, double length, double curvature) {
     _startPos = startPos;
     _c        = startAngle;
     _b        = curvature;
     _length   = length;
 }
 
-NaviArc::~NaviArc()
-{
-
+NaviArc::~NaviArc() {
 }
 
-bool NaviArc::pos(Eigen::Vector2d &pos, double s)
-{
-    if (s < 0 || s > _length)
+bool NaviArc::pos(Eigen::Vector2d &pos, double s) {
+    if (s < 0 || s > _length) {
         return false;
+    }
 
     double retX(.0);
     double retY(.0);
@@ -37,10 +34,10 @@ bool NaviArc::pos(Eigen::Vector2d &pos, double s)
     return true;
 }
 
-bool NaviArc::derivate(ParamDer &der, double s)
-{
-    if (s < 0 || s > _length)
+bool NaviArc::derivate(ParamDer &der, double s) {
+    if (s < 0 || s > _length) {
         return false;
+    }
 
     /* X(s) = x0 + sin(b * s + c) / b ¨C sin(c) / b;
        Y(s) = y0 ¨C cos(b * s + c) / b + cos(c) / b;

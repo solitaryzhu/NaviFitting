@@ -1,24 +1,21 @@
-#include "NaviLine.h"
+﻿#include "NaviLine.h"
 
 namespace fitting
 {
 
-NaviLine::NaviLine(const Eigen::Vector2d &startPos, double angle, double length)
-{
+NaviLine::NaviLine(const Eigen::Vector2d &startPos, double angle, double length) {
     _startPos = startPos;
     _c        = angle;
     _length   = length;
 }
 
-NaviLine::~NaviLine()
-{
-
+NaviLine::~NaviLine() {
 }
 
-bool NaviLine::pos(Eigen::Vector2d &pos, double s)
-{
-    if (s < .0 || s > _length)
+bool NaviLine::pos(Eigen::Vector2d &pos, double s) {
+    if (s < .0 || s > _length) {
         return false;
+    }
 
     double retX(.0);
     double retY(.0);
@@ -32,10 +29,10 @@ bool NaviLine::pos(Eigen::Vector2d &pos, double s)
     return true;
 }
 
-bool NaviLine::derivate(ParamDer &der, double s)
-{
-    if (s < .0 || s > _length)
+bool NaviLine::derivate(ParamDer &der, double s) {
+    if (s < .0 || s > _length) {
         return false;
+    }
 
     /* X(s) = x0 + cos(c) * s
      * Y(s) = y0 + sin(c) * s
